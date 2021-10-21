@@ -1,5 +1,5 @@
 #include "connection.h"
-//test connexion
+//test tuto
 Connection::Connection()
 {
 
