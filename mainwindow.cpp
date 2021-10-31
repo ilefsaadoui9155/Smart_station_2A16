@@ -43,3 +43,19 @@ void MainWindow::on_qb_ajouter_clicked()
 
 
 }
+
+void MainWindow::on_qb_supprimer_clicked()
+{int id =ui->le_supprimer->text().toInt();
+    bool test=Ti.supprimer(id);
+
+    if(test)
+        QMessageBox::information(nullptr, QObject::tr("ok"),
+                    QObject::tr("supression effectué .\n"
+                                "Click Ok to exit."), QMessageBox::Ok);
+    else
+        QMessageBox::critical(nullptr, QObject::tr("not ok"),
+                    QObject::tr("échec suprresion.\n"
+                                "Click cancel to exit."), QMessageBox::Cancel);
+    ui->tab_tickets->setModel(Ti.afficher());
+
+}

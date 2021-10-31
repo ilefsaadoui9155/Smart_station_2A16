@@ -5,6 +5,7 @@
 #include <QObject>
 #include <QString>
 #include<mainwindow.h>
+#include<QObject>
 Tickets::Tickets()
 {
 referance=0;depart=0;arrive=0;destination="";datee="";prix=0;
@@ -49,10 +50,35 @@ bool Tickets::ajouter()
           return query.exec();
 }
 QSqlQueryModel* Tickets::afficher()
-{
+{QSqlQueryModel* model=new QSqlQueryModel();
+
+
+          model->setQuery("SELECT* FROM Ticket");
+          model->setHeaderData(0, Qt::Horizontal, QObject::tr("referance"));
+          model->setHeaderData(1, Qt::Horizontal, QObject::tr("depart"));
+          model->setHeaderData(2, Qt::Horizontal, QObject::tr("arrive"));
+          model->setHeaderData(3, Qt::Horizontal, QObject::tr("destination"));
+          model->setHeaderData(4, Qt::Horizontal, QObject::tr("datee"));
+          model->setHeaderData(5, Qt::Horizontal, QObject::tr("prix"));
+
+
+    return model;
+
 
 
 
 
 }
+bool Tickets::supprimer(int referance){
+      QSqlQuery query;
+      QString res=QString::number(referance);
+    query.prepare("Delete from Ticket where referance=:referance");
+    query.bindValue(":referance", res);
+
+    return  query.exec();
+
+
+
+}
+
 

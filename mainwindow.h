@@ -20,6 +20,8 @@ public:
 private slots:
     void on_qb_ajouter_clicked();
 
+    void on_qb_supprimer_clicked();
+
 private:
     Ui::MainWindow *ui;
     Tickets Ti;

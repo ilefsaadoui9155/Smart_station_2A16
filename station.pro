@@ -20,13 +20,11 @@ SOURCES += \
     connexion.cpp \
     main.cpp \
     mainwindow.cpp \
-    ticket.cpp \
     tickets.cpp
 
 HEADERS += \
     connexion.h \
     mainwindow.h \
-    ticket.h \
     tickets.h
 
 FORMS += \

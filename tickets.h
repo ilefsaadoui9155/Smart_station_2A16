@@ -25,6 +25,7 @@ public:
          void setprix(int);
 
             bool ajouter();
+            bool supprimer(int);
             QSqlQueryModel* afficher();
     private:
         int arrive,referance,depart,prix;

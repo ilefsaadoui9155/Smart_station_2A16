@@ -14,7 +14,7 @@
    <string>Gestion des Clients</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QTabWidget" name="ticket_2">
+   <widget class="QTabWidget" name="supprimer">
     <property name="geometry">
      <rect>
       <x>0</x>
@@ -40,7 +40,7 @@
 background-color: rgb(255, 255, 127);</string>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="tab_3">
      <attribute name="title">
@@ -149,19 +149,6 @@ background-color: rgb(255, 255, 255);</string>
       </property>
       <property name="text">
        <string>Ajouter ticket</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="qb_supprimer">
-      <property name="geometry">
-       <rect>
-        <x>510</x>
-        <y>460</y>
-        <width>101</width>
-        <height>28</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Supprimer ticket</string>
       </property>
      </widget>
      <widget class="QPushButton" name="qb_modifier">
@@ -336,7 +323,6 @@ background-color: rgb(255, 255, 255);</string>
      <zorder>label_3</zorder>
      <zorder>le_destination_2</zorder>
      <zorder>qb_ajouter</zorder>
-     <zorder>qb_supprimer</zorder>
      <zorder>qb_modifier</zorder>
      <zorder>qb_tri</zorder>
      <zorder>qb_qr</zorder>
@@ -347,6 +333,54 @@ background-color: rgb(255, 255, 255);</string>
      <zorder>le_depart</zorder>
      <zorder>label_14</zorder>
      <zorder>le_arrive_2</zorder>
+    </widget>
+    <widget class="QWidget" name="tab_2">
+     <attribute name="title">
+      <string>supprimer</string>
+     </attribute>
+     <widget class="QLabel" name="label_17">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>140</y>
+        <width>91</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(0, 85, 255);
+font: 75 11pt &quot;MS Shell Dlg 2&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Reference</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="le_supprimer">
+      <property name="geometry">
+       <rect>
+        <x>150</x>
+        <y>150</y>
+        <width>113</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 195, 151);</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="qb_supprimer">
+      <property name="geometry">
+       <rect>
+        <x>520</x>
+        <y>360</y>
+        <width>101</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Supprimer ticket</string>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -360,6 +394,9 @@ background-color: rgb(255, 255, 255);</string>
         <width>771</width>
         <height>481</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
       </property>
      </widget>
     </widget>
