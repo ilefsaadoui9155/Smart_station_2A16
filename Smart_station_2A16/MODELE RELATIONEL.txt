@@ -1,0 +1,6 @@
+modele relationelle 
+employé (#CINE, nomm, prenom,adresse,foction #MATRICULE 
+client (CINC,nom ,prenom, mail , #CINE
+bus (MATRICULE , classe ,image, etat  
+tickets(REFERENCE prix ,date , depart, arrivé , 
+reparation (MATRICULE, age 
