@@ -22,6 +22,25 @@ private slots:
 
     void on_qb_supprimer_clicked();
 
+    void on_qb_modifier_clicked();
+
+    void on_comboBox_activated(const QString &arg1);
+
+
+
+
+    void on_trireferance_clicked();
+
+    void on_triprix_clicked();
+
+    void on_tritempsdepart_clicked();
+
+
+
+    void on_lineEdit_textChanged(const QString &arg1);
+
+
+
 private:
     Ui::MainWindow *ui;
     Tickets Ti;

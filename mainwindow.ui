@@ -40,7 +40,7 @@
 background-color: rgb(255, 255, 127);</string>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="tab_3">
      <attribute name="title">
@@ -302,8 +302,8 @@ background-color: rgb(255, 255, 255);</string>
      <widget class="QLabel" name="label_5">
       <property name="geometry">
        <rect>
-        <x>160</x>
-        <y>20</y>
+        <x>150</x>
+        <y>10</y>
         <width>671</width>
         <height>551</height>
        </rect>
@@ -313,6 +313,29 @@ background-color: rgb(255, 255, 255);</string>
       </property>
       <property name="pixmap">
        <pixmap>../logo final.png</pixmap>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="comboBox">
+      <property name="geometry">
+       <rect>
+        <x>662</x>
+        <y>61</y>
+        <width>91</width>
+        <height>31</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="qb_supprimer">
+      <property name="geometry">
+       <rect>
+        <x>450</x>
+        <y>460</y>
+        <width>101</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Supprimer ticket</string>
       </property>
      </widget>
      <zorder>label_5</zorder>
@@ -333,6 +356,8 @@ background-color: rgb(255, 255, 255);</string>
      <zorder>le_depart</zorder>
      <zorder>label_14</zorder>
      <zorder>le_arrive_2</zorder>
+     <zorder>comboBox</zorder>
+     <zorder>qb_supprimer</zorder>
     </widget>
     <widget class="QWidget" name="tab_2">
      <attribute name="title">
@@ -368,19 +393,6 @@ font: 75 11pt &quot;MS Shell Dlg 2&quot;;</string>
        <string notr="true">background-color: rgb(255, 195, 151);</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="qb_supprimer">
-      <property name="geometry">
-       <rect>
-        <x>520</x>
-        <y>360</y>
-        <width>101</width>
-        <height>28</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Supprimer ticket</string>
-      </property>
-     </widget>
     </widget>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -389,14 +401,69 @@ font: 75 11pt &quot;MS Shell Dlg 2&quot;;</string>
      <widget class="QTableView" name="tab_tickets">
       <property name="geometry">
        <rect>
-        <x>10</x>
-        <y>10</y>
-        <width>771</width>
-        <height>481</height>
+        <x>40</x>
+        <y>90</y>
+        <width>721</width>
+        <height>411</height>
        </rect>
       </property>
       <property name="styleSheet">
        <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="trireferance">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>20</y>
+        <width>185</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Trier Referance</string>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="triprix">
+      <property name="geometry">
+       <rect>
+        <x>300</x>
+        <y>20</y>
+        <width>185</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Trier Prix</string>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="tritempsdepart">
+      <property name="geometry">
+       <rect>
+        <x>550</x>
+        <y>20</y>
+        <width>185</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Trier temps depart</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit">
+      <property name="geometry">
+       <rect>
+        <x>180</x>
+        <y>50</y>
+        <width>441</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="placeholderText">
+       <string>Rechercher</string>
       </property>
      </widget>
     </widget>
@@ -404,47 +471,14 @@ font: 75 11pt &quot;MS Shell Dlg 2&quot;;</string>
      <attribute name="title">
       <string>recherche</string>
      </attribute>
-     <widget class="QPushButton" name="pushButton_8">
+     <widget class="QTableView" name="tab_recherche">
       <property name="geometry">
        <rect>
-        <x>260</x>
-        <y>200</y>
-        <width>93</width>
-        <height>28</height>
+        <x>105</x>
+        <y>71</y>
+        <width>661</width>
+        <height>421</height>
        </rect>
-      </property>
-      <property name="text">
-       <string>validé</string>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="lineEdit_5">
-      <property name="geometry">
-       <rect>
-        <x>130</x>
-        <y>100</y>
-        <width>113</width>
-        <height>22</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 195, 151);</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_15">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>90</y>
-        <width>91</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: rgb(0, 85, 255);
-font: 75 11pt &quot;MS Shell Dlg 2&quot;;</string>
-      </property>
-      <property name="text">
-       <string>Reference</string>
       </property>
      </widget>
     </widget>
