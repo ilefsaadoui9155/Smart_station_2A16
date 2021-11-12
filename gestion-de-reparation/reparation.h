@@ -9,23 +9,17 @@ class reparation
 public:
 
    reparation();
-   reparation(QString,QString,int,QString,int,int,QString);
+   reparation(int,QString,QString,int);
 
-   int getcin();
-   int gettel();
-    QString getfonction();
-   int getsalaire();
-    QString getsexe();
-   QString getnom();
-   QString getprenom();
+   int getrefrep();
+   QString gettype();
+    int getnombre();
+   QString getmatricule();
 
-   void setcin(int);
-   void settel(int);
-   void setfocntion(QString);
-   void setsalaire(int);
-   void setsexe(QString);
-   void setnom(QString);
-   void setprenom(QString);
+   void setrefrep(int);
+   void setnombre(int);
+   void settype(QString);
+   void setmatricule(QString);
 
 bool rechercher(int);
 /*
@@ -34,15 +28,13 @@ bool rechercher(int);
 */
     bool ajouter();
     QSqlQueryModel * afficher();
- bool modifierj(int cin ,QString nom , QString prenom  ,QString fonction ,int salaire, QString sexe, int tel);
+ bool modifierj(int refrep ,QString type , QString matricule ,int nombre);
   bool supprimer(int);
 QSqlQueryModel * rechercher (const QString &aux);
    private :
-   QString nom,prenom;
-   QString sexe;
-   int CIN, tel ,salaire;
+   QString matricule,type;
+   int refrep,nombre;
 
-   QString fonction;
 };
 
 

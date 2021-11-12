@@ -17,11 +17,11 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
 
 
-   ui->l_CIN->setValidator(new QIntValidator(0,999999,this));
-   ui->l_tel->setValidator(new QIntValidator(0,999999999,this));
+   ui->l_refrep->setValidator(new QIntValidator(0,999999,this));
+   ui->l_nombre->setValidator(new QIntValidator(0,999999999,this));
    ui->l_salaire->setValidator(new QIntValidator(0,999999999,this));
 
-ui->tab_etud->setModel(R.afficher());
+ui->tab_rep->setModel(R.afficher());
 
 }
 
@@ -50,10 +50,10 @@ void MainWindow::on_ajouter_clicked()
 
 
 /*
-     int cin_c=ui->l_chef->text().toInt();
+     int refrep_c=ui->l_chef->text().toInt();
      int code_p=ui->l_p->text().toInt();
 */
-     reparation R(nom,prenom,CIN,fonction,salaire,tel,sexe);
+     reparation R(refrep,type,matricule,nombre);
 
 bool test=R.ajouter();
 
@@ -82,13 +82,13 @@ else
 
 
 void MainWindow::on_button_modifier_clicked()
-{ui->tab_etud->setModel(R.afficher());
+{ui->tab_rep->setModel(R.afficher());
 
-    bool    test=R.modifierj(ui->l_CIN->text().toInt(),ui->l_nom->text(),ui->l_prenom->text(),ui->comboBox->currentText(),ui->l_salaire->text().toInt(),ui->l_sexe->currentText(),ui->l_tel->text().toInt());
+    bool    test=R.modifierj(ui->l_refrep->text().toInt(),ui->l_matricule->text(),ui->l_type->text(),ui->comboBox->currentText(),ui->l_nombre->text().toInt());
 
     if (test)
           {
-                  ui->tab_etud->setModel(R.afficher());
+                  ui->tab_rep->setModel(R.afficher());
 
               QMessageBox::information(nullptr,QObject::tr("OK"),
                                    QObject::tr("modification établie"),
@@ -100,11 +100,11 @@ void MainWindow::on_button_modifier_clicked()
 }
 /*
 void MainWindow::on_supprimer_clicked()
-{ ui->tab_etud->setModel(R.afficher());
+{ ui->tab_rep->setModel(R.afficher());
     bool test=R.supprimer(ui->lineEdit_sup->text().toInt());
 
     if(test)
-    {ui->tab_etud->setModel(R.afficher());//actualisation taa afficher
+    {ui->tab_rep->setModel(R.afficher());//actualisation taa afficher
             QMessageBox::information(nullptr,QObject::tr("ok"),
                                      QObject::tr("suppression succful .\n"),
                     QMessageBox::Cancel);
@@ -118,12 +118,12 @@ void MainWindow::on_supprimer_clicked()
 void MainWindow::on_supprimer_clicked()
 {
 
-    reparation R1; R1.setcin(ui->lineEdit_sup->text().toInt());
-    bool test=R1.supprimer(R1.getcin());
+    reparation R1; R1.setrefrep(ui->lineEdit_sup->text().toInt());
+    bool test=R1.supprimer(R1.getrefrep());
     QMessageBox msgBox;
     if(test)
     {
-         ui->tab_etud->setModel(R1.afficher());
+         ui->tab_rep->setModel(R1.afficher());
         msgBox.setText("suppression avec succes.");
     }
     else
@@ -133,73 +133,66 @@ void MainWindow::on_supprimer_clicked()
 
 }
 
-void MainWindow::on_radioButton_clicked() //tri par fonction
+void MainWindow::on_radioButton_clicked() //tri par type
 {
     QMessageBox msgBox ;
         QSqlQueryModel * model= new QSqlQueryModel();
 
 
 
-           model->setQuery("select * from table1 order by fonction");
+           model->setQuery("select * from table1 order by type");
 
-           model->setHeaderData(0, Qt::Horizontal, QObject::tr("cin"));
-           model->setHeaderData(1, Qt::Horizontal, QObject::tr("nom"));
-           model->setHeaderData(2, Qt::Horizontal, QObject::tr("prenom"));
-           model->setHeaderData(3, Qt::Horizontal, QObject::tr("fonction"));
-           model->setHeaderData(4, Qt::Horizontal, QObject::tr("salaire"));
-           model->setHeaderData(5, Qt::Horizontal, QObject::tr("sexe"));
+           model->setHeaderData(0, Qt::Horizontal, QObject::tr("refrep"));
+           model->setHeaderData(1, Qt::Horizontal, QObject::tr("matricule"));
+           model->setHeaderData(2, Qt::Horizontal, QObject::tr("type"));
+           model->setHeaderData(3, Qt::Horizontal, QObject::tr("nombre"));
    model->setHeaderData(5, Qt::Horizontal, QObject::tr("telephone"));
-                    ui->tab_etud_4->setModel(model);
-                    ui->tab_etud_4->show();
+                    ui->tab_rep_4->setModel(model);
+                    ui->tab_rep_4->show();
                     msgBox.setText("Tri avec succés.");
                     msgBox.exec();
 }
 
-void MainWindow::on_radioButton_3_clicked() //tri par cin
+void MainWindow::on_radioButton_3_clicked() //tri par refrep
 {
     QMessageBox msgBox ;
             QSqlQueryModel * model= new QSqlQueryModel();
 
 
-               model->setQuery("select * from table1 order by CIN ");
-               model->setHeaderData(0, Qt::Horizontal, QObject::tr("cin"));
-               model->setHeaderData(1, Qt::Horizontal, QObject::tr("nom"));
-               model->setHeaderData(2, Qt::Horizontal, QObject::tr("prenom"));
-               model->setHeaderData(3, Qt::Horizontal, QObject::tr("fonction"));
-               model->setHeaderData(4, Qt::Horizontal, QObject::tr("salaire"));
-               model->setHeaderData(5, Qt::Horizontal, QObject::tr("sexe"));
+               model->setQuery("select * from table1 order by refrep ");
+               model->setHeaderData(0, Qt::Horizontal, QObject::tr("refrep"));
+               model->setHeaderData(1, Qt::Horizontal, QObject::tr("matricule"));
+               model->setHeaderData(2, Qt::Horizontal, QObject::tr("type"));
+               model->setHeaderData(3, Qt::Horizontal, QObject::tr("nombre"));
        model->setHeaderData(5, Qt::Horizontal, QObject::tr("telephone"));
-                        ui->tab_etud_4->setModel(model);
-                        ui->tab_etud_4->show();
+                        ui->tab_rep_4->setModel(model);
+                        ui->tab_rep_4->show();
                         msgBox.setText("Tri avec succés.");
                         msgBox.exec();
 }
 
-void MainWindow::on_radioButton_2_clicked() //tri par nom
+void MainWindow::on_radioButton_2_clicked() //tri par matricule
 {
     QMessageBox msgBox ;
         QSqlQueryModel * model= new QSqlQueryModel();
 
 
 
-           model->setQuery("select * from table1 order by nom");
+           model->setQuery("select * from table1 order by matricule");
 
-           model->setHeaderData(0, Qt::Horizontal, QObject::tr("cin"));
-           model->setHeaderData(1, Qt::Horizontal, QObject::tr("nom"));
-           model->setHeaderData(2, Qt::Horizontal, QObject::tr("prenom"));
-           model->setHeaderData(3, Qt::Horizontal, QObject::tr("fonction"));
-           model->setHeaderData(4, Qt::Horizontal, QObject::tr("salaire"));
-           model->setHeaderData(5, Qt::Horizontal, QObject::tr("sexe"));
-   model->setHeaderData(5, Qt::Horizontal, QObject::tr("telephone"));
-                    ui->tab_etud_4->setModel(model);
-                    ui->tab_etud_4->show();
+           model->setHeaderData(0, Qt::Horizontal, QObject::tr("refrep"));
+           model->setHeaderData(1, Qt::Horizontal, QObject::tr("matricule"));
+           model->setHeaderData(2, Qt::Horizontal, QObject::tr("type"));
+           model->setHeaderData(3, Qt::Horizontal, QObject::tr("nombre"));
+                    ui->tab_rep_4->setModel(model);
+                    ui->tab_rep_4->show();
                     msgBox.setText("Tri avec succés.");
                     msgBox.exec();
 }
 
 void MainWindow::on_l_r_textChanged(const QString &arg1)
 {
-    Employe a;
+    reparation a;
         if(ui->l_r->text() == "")
             {
                 ui->rech->setModel(a.afficher());
