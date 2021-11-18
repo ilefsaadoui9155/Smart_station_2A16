@@ -53,7 +53,7 @@ void MainWindow::on_ajouter_clicked()
      int refrep_c=ui->l_chef->text().toInt();
      int code_p=ui->l_p->text().toInt();
 */
-     reparation R(refrep,type,matricule,nombre);
+ //-----    reparation R(refrep,type,matricule,nombre);
 
 bool test=R.ajouter();
 
@@ -204,5 +204,27 @@ void MainWindow::on_l_r_textChanged(const QString &arg1)
 }
 
 
+void MainWindow::on_pushButton_clicked() //PDF
+{
+   reparation rep;
+    rep.genererPDF();
+    QString link="D:/ProjetCpp/gestion-de-reparation/liste.pdf";
+        QDesktopServices::openUrl(QUrl(link));
+}
+
+void MainWindow::on_historique_clicked()
+{
+    Historique h;
+h.load();
+h.load();
+}
+
+
+
+
+void MainWindow::on_pushButton_2_clicked()
+{
+
+}
 
 
