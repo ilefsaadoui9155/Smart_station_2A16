@@ -4,6 +4,8 @@
 #include <QString>
 #include <QDate>
 #include <QSqlQueryModel>
+#include<QApplication>
+#include<vector>
 class Tickets
 {
 public:
@@ -33,12 +35,15 @@ public:
   QSqlQueryModel * triertempsdepart();
   void recherche(QTableView * tabl, QString,int,int);
 
+  double calucul_revenu();
+
+
     private:
 
+QVector <Tickets> tabE;
         int arrive,referance,depart;
         double prix;
         QString destination,datee;
-
     };
 
 

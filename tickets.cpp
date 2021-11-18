@@ -6,6 +6,9 @@
 #include <QString>
 #include<mainwindow.h>
 #include<QObject>
+#include<QLabel>
+#include<QVector>
+#include<qiterator.h>
 Tickets::Tickets()
 {
 referance=0;depart=0;arrive=0;destination="";datee="";prix=0;
@@ -149,5 +152,26 @@ void Tickets :: recherche(QTableView * table ,QString nom,int referance, int dep
     table->show();
 
 }
+
+double Tickets::calucul_revenu()
+{
+
+        QSqlQuery query;
+        query.prepare("SELECT prix FROM ticket");
+
+        double somme=0;
+        if(query.exec())
+        {
+            while(query.next())
+            {
+                double prix = query.value(0).toString().toInt();//Récupère le résultat de la requête
+                 somme=somme+prix;
+
+            }
+        }
+        return somme;
+}
+
+
 
 

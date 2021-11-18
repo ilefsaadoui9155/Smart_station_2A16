@@ -4,6 +4,10 @@
 #include "QMessageBox"
 #include <QDate>
 #include "QSqlQuery"
+#include <QApplication>
+#include <QLabel>
+#include <QPixmap>
+#include <QTextStream>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -13,6 +17,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     ui->tab_tickets->setModel(Ti.afficher());
     ui->comboBox->setModel(Ti.afficher());
+
 
 }
 
@@ -30,6 +35,7 @@ void MainWindow::on_qb_ajouter_clicked()
         QString destination=ui->le_destination_2->text();
         QString datee=ui->le_date_2->text();
         double prix=ui->le_prix_2->text().toDouble();
+
 
         Tickets T(referance,depart,arrive, destination, datee, prix);
 
@@ -156,3 +162,206 @@ void MainWindow::on_lineEdit_textChanged(const QString &arg1)
 
 
 
+
+void MainWindow::on_pushButton_16_clicked()
+{  QString depart=ui->le_map->text();
+   if  (depart=="tunis")
+          {
+    QPixmap pix("C:/Users/Aziz-PC/OneDrive/Bureau/school/2eme anne/projet c++/map/tunis.png");
+   int w = ui->label_pic->width();
+   int h = ui->label_pic->height();
+    ui->label_pic->setPixmap(pix.scaled(w,h,Qt::KeepAspectRatio));
+}
+else if(depart=="sousse")
+   {
+       QPixmap pix("C:/Users/Aziz-PC/OneDrive/Bureau/school/2eme anne/projet c++/map/sousse.png");
+       int w = ui->label_pic->width();
+       int h = ui->label_pic->height();
+        ui->label_pic->setPixmap(pix.scaled(w,h,Qt::KeepAspectRatio));
+
+
+   }
+   else if(depart=="bizerte")
+      {
+          QPixmap pix("C:/Users/Aziz-PC/OneDrive/Bureau/school/2eme anne/projet c++/map/bizerte.png");
+          int w = ui->label_pic->width();
+          int h = ui->label_pic->height();
+           ui->label_pic->setPixmap(pix.scaled(w,h,Qt::KeepAspectRatio));
+
+      }
+   else if(depart=="nabeul")
+      {
+          QPixmap pix("C:/Users/Aziz-PC/OneDrive/Bureau/school/2eme anne/projet c++/map/nabeul.png");
+          int w = ui->label_pic->width();
+          int h = ui->label_pic->height();
+           ui->label_pic->setPixmap(pix.scaled(w,h,Qt::KeepAspectRatio));
+
+
+      }
+   else if(depart=="jendouba")
+      {
+          QPixmap pix("C:/Users/Aziz-PC/OneDrive/Bureau/school/2eme anne/projet c++/map/jendouba.png");
+          int w = ui->label_pic->width();
+          int h = ui->label_pic->height();
+           ui->label_pic->setPixmap(pix.scaled(w,h,Qt::KeepAspectRatio));
+
+
+      }
+   else if(depart=="siliana")
+      {
+          QPixmap pix("C:/Users/Aziz-PC/OneDrive/Bureau/school/2eme anne/projet c++/map/siliana.png");
+          int w = ui->label_pic->width();
+          int h = ui->label_pic->height();
+           ui->label_pic->setPixmap(pix.scaled(w,h,Qt::KeepAspectRatio));
+
+
+      }
+   else
+   {
+       QMessageBox msgBox;
+
+              msgBox.setText("region inconnu");
+          msgBox.exec();
+
+}}
+
+void MainWindow::on_QR_code_clicked()
+{
+    QString qr=ui->le_QR->text();
+    if(qr=="1")
+          {
+              QPixmap pix("C:/Users/Aziz-PC/OneDrive/Bureau/school/2eme anne/projet c++/qr/1.png");
+              int w = ui->label_pic_2->width();
+              int h = ui->label_pic_2->height();
+               ui->label_pic_2->setPixmap(pix.scaled(w,h,Qt::KeepAspectRatio));
+
+
+          }
+   else if(qr=="2")
+          {
+              QPixmap pix("C:/Users/Aziz-PC/OneDrive/Bureau/school/2eme anne/projet c++/qr/2.png");
+              int w = ui->label_pic_2->width();
+              int h = ui->label_pic_2->height();
+               ui->label_pic_2->setPixmap(pix.scaled(w,h,Qt::KeepAspectRatio));
+
+
+          }
+   else if(qr=="3")
+          {
+              QPixmap pix("C:/Users/Aziz-PC/OneDrive/Bureau/school/2eme anne/projet c++/qr/3.png");
+              int w = ui->label_pic_2->width();
+              int h = ui->label_pic_2->height();
+               ui->label_pic_2->setPixmap(pix.scaled(w,h,Qt::KeepAspectRatio));
+
+
+          }
+    else
+    {
+        QMessageBox msgBox;
+
+               msgBox.setText("taper 1 ou 2 ou 3");
+           msgBox.exec();
+
+ }
+
+}
+
+void MainWindow::on_qb_revenu_clicked()
+
+{
+//    double x=15;
+//    QString nombre;
+//    nombre.setNum(x);
+
+    QString val = QString::number(Ti.calucul_revenu());
+    ui->le_revenu1->setText(val);
+
+}
+
+void MainWindow::on_comboBox_2_activated(const QString &arg1)
+{
+
+    int referance = ui->comboBox_2->currentText().toInt();
+
+             QString id_string= QString::number(referance);
+                    QSqlQuery query;
+                    query.prepare("select * from TICKETS where REFERANCE='"+id_string+"'");
+
+                    if(query.exec()){
+
+                        while(query.next())
+                        { ui->label_pic_2->setText(query.value(6).toString());
+
+
+                            if  (ui->label_pic_2->toPlainText()== "tunis")
+                                        {ui->label_pic->clear();
+
+                                  QPixmap pix("C:/Users/Aziz-PC/OneDrive/Bureau/school/2eme anne/projet c++/map/tunis.png");
+                                 int w = ui->label_pic->width();
+                                 int h = ui->label_pic->height();
+                                  ui->label_pic->setPixmap(pix.scaled(w,h,Qt::KeepAspectRatio));
+                              }
+
+                               else if(ui->label_pic_2->toPlainText()=="sousse")
+                                 { ui->label_pic->clear();
+                                     QPixmap pix("C:/Users/Aziz-PC/OneDrive/Bureau/school/2eme anne/projet c++/map/sousse.png");
+                                     int w = ui->label_pic->width();
+                                     int h = ui->label_pic->height();
+                                      ui->label_pic->setPixmap(pix.scaled(w,h,Qt::KeepAspectRatio));
+
+
+                                 }
+                                 else if(ui->label_pic_2->toPlainText()=="bizerte")
+                                    {ui->label_pic->clear();
+                                        QPixmap pix("C:/Users/Aziz-PC/OneDrive/Bureau/school/2eme anne/projet c++/map/bizerte.png");
+                                        int w = ui->label_pic->width();
+                                        int h = ui->label_pic->height();
+                                         ui->label_pic->setPixmap(pix.scaled(w,h,Qt::KeepAspectRatio));
+
+                                    }
+                                 else if(ui->label_pic_2->toPlaiText()=="nabeul")
+                                    {ui->label_pic->clear();
+                                        QPixmap pix("C:/Users/Aziz-PC/OneDrive/Bureau/school/2eme anne/projet c++/map/nabeul.png");
+                                        int w = ui->label_pic->width();
+                                        int h = ui->label_pic->height();
+                                         ui->label_pic->setPixmap(pix.scaled(w,h,Qt::KeepAspectRatio));
+
+
+                                    }
+                                 else if(ui->label_pic_2->toPlainText()=="jendouba")
+                                    {ui->label_pic->clear();
+                                        QPixmap pix("C:/Users/Aziz-PC/OneDrive/Bureau/school/2eme anne/projet c++/map/jendouba.png");
+                                        int w = ui->label_pic->width();
+                                        int h = ui->label_pic->height();
+                                         ui->label_pic->setPixmap(pix.scaled(w,h,Qt::KeepAspectRatio));
+
+
+                                    }
+                                 else if(ui->label_pic_2->toPlainText()=="siliana")
+                                    {ui->label_pic->clear();
+                                        QPixmap pix("C:/Users/Aziz-PC/OneDrive/Bureau/school/2eme anne/projet c++/map/siliana.png");
+                                        int w = ui->label_pic->width();
+                                        int h = ui->label_pic->height();
+                                         ui->label_pic->setPixmap(pix.scaled(w,h,Qt::KeepAspectRatio));
+
+
+                                    }
+                                 else
+                                 {
+                                     QMessageBox msgBox;
+
+                                            msgBox.setText("region inconnu");
+                                        msgBox.exec();}
+
+
+
+
+
+
+
+
+                        }} else
+                        QMessageBox::critical(nullptr, QObject::tr(" echoué"),
+                                    QObject::tr("Erreur !.\n"
+                                                "Click Cancel to exit."), QMessageBox::Cancel);
+    }
