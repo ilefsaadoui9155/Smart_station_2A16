@@ -23,8 +23,11 @@
       <height>651</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="tab_2">
      <attribute name="title">
@@ -94,7 +97,7 @@
         <string>nombre</string>
        </property>
       </widget>
-      <widget class="QLineEdit" name="le_nom">
+      <widget class="QLineEdit" name="ref">
        <property name="geometry">
         <rect>
          <x>90</x>
@@ -104,7 +107,7 @@
         </rect>
        </property>
       </widget>
-      <widget class="QLineEdit" name="le_prenom">
+      <widget class="QLineEdit" name="matricule">
        <property name="geometry">
         <rect>
          <x>90</x>
@@ -114,7 +117,7 @@
         </rect>
        </property>
       </widget>
-      <widget class="QLineEdit" name="l_adresse">
+      <widget class="QLineEdit" name="type">
        <property name="geometry">
         <rect>
          <x>90</x>
@@ -124,7 +127,7 @@
         </rect>
        </property>
       </widget>
-      <widget class="QLineEdit" name="la_fonction">
+      <widget class="QLineEdit" name="nombre">
        <property name="geometry">
         <rect>
          <x>90</x>
@@ -134,7 +137,7 @@
         </rect>
        </property>
       </widget>
-      <widget class="QPushButton" name="pushButton">
+      <widget class="QPushButton" name="ajouter">
        <property name="geometry">
         <rect>
          <x>100</x>
@@ -160,7 +163,7 @@
       <property name="title">
        <string>List des Reparation</string>
       </property>
-      <widget class="QTableView" name="tab_Employes">
+      <widget class="QTableView" name="tabreparation">
        <property name="geometry">
         <rect>
          <x>10</x>
@@ -171,7 +174,7 @@
        </property>
       </widget>
      </widget>
-     <widget class="QLineEdit" name="le_cin_supp">
+     <widget class="QLineEdit" name="reff">
       <property name="geometry">
        <rect>
         <x>740</x>
@@ -271,7 +274,7 @@
         <string>reference</string>
        </property>
       </widget>
-      <widget class="QLineEdit" name="le_nom_2">
+      <widget class="QLineEdit" name="matricule2">
        <property name="geometry">
         <rect>
          <x>90</x>
@@ -281,7 +284,7 @@
         </rect>
        </property>
       </widget>
-      <widget class="QLineEdit" name="le_prenom_2">
+      <widget class="QLineEdit" name="type2">
        <property name="geometry">
         <rect>
          <x>90</x>
@@ -291,7 +294,7 @@
         </rect>
        </property>
       </widget>
-      <widget class="QLineEdit" name="l_adresse_2">
+      <widget class="QLineEdit" name="nombre2">
        <property name="geometry">
         <rect>
          <x>90</x>
@@ -301,7 +304,7 @@
         </rect>
        </property>
       </widget>
-      <widget class="QLineEdit" name="le_cin_e_2">
+      <widget class="QLineEdit" name="ref2">
        <property name="geometry">
         <rect>
          <x>90</x>
@@ -324,7 +327,122 @@
         <string>modifier</string>
        </property>
       </widget>
+      <widget class="QPushButton" name="recherche">
+       <property name="geometry">
+        <rect>
+         <x>290</x>
+         <y>260</y>
+         <width>93</width>
+         <height>28</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Recherche</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="reff3">
+       <property name="geometry">
+        <rect>
+         <x>140</x>
+         <y>260</y>
+         <width>113</width>
+         <height>22</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_5">
+       <property name="geometry">
+        <rect>
+         <x>50</x>
+         <y>260</y>
+         <width>71</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>reference</string>
+       </property>
+      </widget>
      </widget>
+     <widget class="QPushButton" name="anglais">
+      <property name="geometry">
+       <rect>
+        <x>390</x>
+        <y>40</y>
+        <width>93</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Anglais</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="Imprimer">
+      <property name="geometry">
+       <rect>
+        <x>390</x>
+        <y>120</y>
+        <width>93</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Imprimer</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="francais">
+      <property name="geometry">
+       <rect>
+        <x>390</x>
+        <y>80</y>
+        <width>93</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Francais</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton">
+      <property name="geometry">
+       <rect>
+        <x>390</x>
+        <y>160</y>
+        <width>93</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>PDF</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_10">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>0</y>
+        <width>731</width>
+        <height>491</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">image:url(:/D:/ProjetCpp/gestion-de-reparation/logo.png)</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <zorder>label_10</zorder>
+     <zorder>groupBox</zorder>
+     <zorder>groupBox_2</zorder>
+     <zorder>reff</zorder>
+     <zorder>label_6</zorder>
+     <zorder>SupprimerButton</zorder>
+     <zorder>groupBox_3</zorder>
+     <zorder>anglais</zorder>
+     <zorder>Imprimer</zorder>
+     <zorder>francais</zorder>
+     <zorder>pushButton</zorder>
     </widget>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -335,7 +453,7 @@
        <rect>
         <x>520</x>
         <y>420</y>
-        <width>141</width>
+        <width>161</width>
         <height>31</height>
        </rect>
       </property>
@@ -411,7 +529,7 @@ radius: 3, stop: 0 #c4c9c7, stop: 1 #c4c9c7);
        <rect>
         <x>520</x>
         <y>380</y>
-        <width>131</width>
+        <width>161</width>
         <height>31</height>
        </rect>
       </property>
@@ -444,13 +562,13 @@ radius: 3, stop: 0 #c4c9c7, stop: 1 #c4c9c7);
        <string>tri par referance</string>
       </property>
      </widget>
-     <widget class="QTableView" name="tab_etud_4">
+     <widget class="QTableView" name="tab_rep">
       <property name="geometry">
        <rect>
-        <x>230</x>
-        <y>140</y>
-        <width>461</width>
-        <height>231</height>
+        <x>210</x>
+        <y>100</y>
+        <width>571</width>
+        <height>271</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -464,11 +582,96 @@ radius: 1.89, stop: 0 #ffffff, stop: 1 #999);
 }</string>
       </property>
      </widget>
+     <widget class="QLabel" name="label_12">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>390</y>
+        <width>181</width>
+        <height>191</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">image:url(:/D:/ProjetCpp/gestion-de-reparation/logo.png)</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
     </widget>
-    <widget class="QWidget" name="tab_3">
+    <widget class="QWidget" name="tab_4">
      <attribute name="title">
-      <string>stat</string>
+      <string>Historique</string>
      </attribute>
+     <widget class="QPushButton" name="pushButton_76">
+      <property name="geometry">
+       <rect>
+        <x>670</x>
+        <y>60</y>
+        <width>93</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+padding: 1px;
+border-style: solid;
+border: 2px solid gray;
+border-radius: 8px;
+background-color: rgb(170, 150, 123);
+border:2px solid #000;
+}
+QPushButton {
+     color: #fff !important;
+
+text-decoration: none;
+background: #ffb300;
+
+border-radius: 5px;
+display: inline-block;
+border: none;
+transition: all 0.4s ease 0s;
+ }
+ QPushButton:hover {
+     background: #ffcc00;
+	background-color: ;
+letter-spacing: 1px;
+-webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+-moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
+transition: all 0.4s ease 0s;
+ }</string>
+      </property>
+      <property name="text">
+       <string>Historique</string>
+      </property>
+     </widget>
+     <widget class="QTableView" name="tableView_3">
+      <property name="geometry">
+       <rect>
+        <x>150</x>
+        <y>110</y>
+        <width>631</width>
+        <height>461</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_13">
+      <property name="geometry">
+       <rect>
+        <x>790</x>
+        <y>410</y>
+        <width>181</width>
+        <height>191</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">image:url(:/D:/ProjetCpp/gestion-de-reparation/logo.png)</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
     </widget>
    </widget>
   </widget>
