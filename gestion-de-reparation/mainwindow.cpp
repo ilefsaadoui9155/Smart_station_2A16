@@ -9,13 +9,19 @@
 #include<QTextStream>
 #include<QTextDocument>
 #include<QPrintDialog>
-
 #include <QSystemTrayIcon>
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
 ui->setupUi(this);
+QRegExp rx("[a-zA-Z]+");
+
+
+
+
+
+
 ui->tab_rep->setModel(tmpreparation.afficher());
 
 ui->tabreparation->setModel(tmpreparation.afficher());
@@ -29,12 +35,7 @@ MainWindow::~MainWindow()
 
 
 
-/*void MainWindow::on_pb_supprimer_clicked()
-{
 
-
-
-}*/
 
 void MainWindow::on_ajouter_clicked()
 {
@@ -42,24 +43,34 @@ void MainWindow::on_ajouter_clicked()
     QSystemTrayIcon *notifyIcon = new QSystemTrayIcon;
     notifyIcon->show();
     notifyIcon->setIcon(QIcon("icone.png"));
-
     notifyIcon->showMessage("Reparation ajouter ","Reparation ajouter",QSystemTrayIcon::Information,15000);
+
+
+
 
     int refrep = ui->ref->text().toInt();
     QString matricule= ui->matricule->text();
     QString type= ui->type->text();
     int nombre = ui->nombre->text().toInt();
+
+
   reparation r(refrep,matricule,type,nombre);
+  if(verifmatricule()&&verifrefrep()&&veriftype()&&verifnombre()){
   bool test=r.ajouter();
   if(test)
 {
+
 
       ui->tabreparation->setModel(tmpreparation.afficher());//refresh
 QMessageBox::information(nullptr, QObject::tr("Ajouter une reparation"),
                   QObject::tr("Reparation ajoutée.\n"
                               "Click Cancel to exit."), QMessageBox::Cancel);
 
+
+  }
+
 }
+
   else
       QMessageBox::critical(nullptr, QObject::tr("Ajouter une reparation"),
                   QObject::tr("Erreur !.\n"
@@ -95,8 +106,11 @@ void MainWindow::on_ButtonModification_clicked()
     QSystemTrayIcon *notifyIcon = new QSystemTrayIcon;
     notifyIcon->show();
     notifyIcon->setIcon(QIcon("icone.png"));
-
     notifyIcon->showMessage("Reparation modifiee ","Reparation modifiee",QSystemTrayIcon::Information,15000);
+
+
+
+
     int refrep = ui->ref2->text().toInt();
     QString matricule= ui->matricule2->text();
     QString type= ui->type2->text();
@@ -130,11 +144,7 @@ void MainWindow::on_pushButton_76_clicked()
     ui->tableView_3->setModel(tph.afficherhis());//refresh
 }
 
-void MainWindow::on_tableView_3_activated(const QModelIndex &index)
-{
 
-}
-//----multilingue
 void MainWindow::on_anglais_clicked()
 {
     QSystemTrayIcon *notifyIcon = new QSystemTrayIcon;
@@ -195,8 +205,9 @@ void MainWindow::on_radioButton_3_clicked()
         QSqlQueryModel * model= new QSqlQueryModel();
 
            model->setQuery("select * from reparation ORDER BY refrep");
-           model->setHeaderData(0, Qt::Horizontal, QObject::tr("matricule"));
-           model->setHeaderData(1, Qt::Horizontal, QObject::tr("type "));
+           model->setHeaderData(0, Qt::Horizontal, QObject::tr("refrep"));
+           model->setHeaderData(1, Qt::Horizontal, QObject::tr("matricule "));
+           model->setHeaderData(2, Qt::Horizontal, QObject::tr("type"));
            model->setHeaderData(2, Qt::Horizontal, QObject::tr("nombre"));
 
                     ui->tab_rep->setModel(model);
@@ -212,7 +223,8 @@ void MainWindow::on_radioButton_2_clicked()
 
            model->setQuery("select * from reparation ORDER BY matricule");
            model->setHeaderData(0, Qt::Horizontal, QObject::tr("refrep"));
-           model->setHeaderData(1, Qt::Horizontal, QObject::tr("type "));
+           model->setHeaderData(1, Qt::Horizontal, QObject::tr("matricule "));
+           model->setHeaderData(2, Qt::Horizontal, QObject::tr("type"));
            model->setHeaderData(2, Qt::Horizontal, QObject::tr("nombre"));
 
                     ui->tab_rep->setModel(model);
@@ -229,6 +241,7 @@ void MainWindow::on_radioButton_clicked()
            model->setQuery("select * from reparation ORDER BY type");
            model->setHeaderData(0, Qt::Horizontal, QObject::tr("refrep"));
            model->setHeaderData(1, Qt::Horizontal, QObject::tr("matricule "));
+           model->setHeaderData(2, Qt::Horizontal, QObject::tr("type"));
            model->setHeaderData(2, Qt::Horizontal, QObject::tr("nombre"));
 
                     ui->tab_rep->setModel(model);
@@ -277,7 +290,7 @@ void MainWindow::on_pushButton_clicked()
                      out <<  "</table> </center>\n"
 
                          "</body>\n"
-                   "<img style=\"  grid-column: 5 / 6 grid-row: 2 / 3;\" src=\"D:\ProjetCpp\gestion-de-reparation\logo.png"" alt=\"picture\" width=\"40\" height=\"30\">";
+             //      "<img style=\"  grid-column: 5 / 6 grid-row: 2 / 3;\" src=\"D:\ProjetCpp\gestion-de-reparation\logo.png"" alt=\"picture\" width=\"40\" height=\"30\">";
 
                          "</html>\n";
 
@@ -307,4 +320,81 @@ void MainWindow::on_Imprimer_clicked()
     if(dialog.exec()== QDialog::Rejected)
 
         return;
+}
+bool MainWindow::verifrefrep()
+{
+    if (ui->ref->text().contains(QRegExp("[^0_9]") ) || ui->ref->text().isEmpty())
+    {
+        ui->ref->clear();
+
+        ui->ref->setPlaceholderText("contient que des chiffres") ;
+        return false;
+    }
+    else
+    {
+        return true;
+    }
+
+}
+bool MainWindow::verifmatricule()
+{
+    if (ui->matricule->text().contains(QRegExp("[^a-zA-Z ]") ) || ui->matricule->text().isEmpty())
+    {
+        ui->matricule->clear();
+
+        ui->matricule->setPlaceholderText("contient que des caracteres") ;
+        return false;
+    }
+    else
+    {
+        return true;
+    }
+
+}
+bool MainWindow::veriftype()
+{
+    if (ui->type->text().contains(QRegExp("[^a-zA-Z ]") ) || ui->type->text().isEmpty())
+    {
+        ui->type->clear();
+
+        ui->type->setPlaceholderText("contient que des caracteres") ;
+        return false;
+    }
+    else
+    {
+        return true;
+    }
+
+}
+bool MainWindow::verifnombre()
+{
+    if (ui->nombre->text().contains(QRegExp("[^0_9]") ) || ui->nombre->text().isEmpty())
+    {
+        ui->nombre->clear();
+
+        ui->nombre->setPlaceholderText("contient que des chiffres") ;
+        return false;
+    }
+    else
+    {
+        return true;
+    }
+
+}
+
+
+
+
+
+
+//arduino
+
+void MainWindow::on_pushButton_6_clicked()
+{
+          A.write_to_arduino("r");
+}
+
+void MainWindow::on_pushButton_7_clicked()
+{
+    A.write_to_arduino("a");
 }

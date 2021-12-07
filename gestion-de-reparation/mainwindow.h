@@ -1,6 +1,7 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 #include "reparation.h"
+#include"arduino.h"
 #include <QMainWindow>
 
 namespace Ui {
@@ -47,12 +48,24 @@ private slots:
 
     void on_Imprimer_clicked();
 
+    bool verifrefrep();
+    bool verifmatricule();
+    bool veriftype();
+    bool verifnombre();
+
+    void on_pushButton_6_clicked();
+
+    void on_pushButton_7_clicked();
+
 private:
     Ui::MainWindow *ui;
     reparation tmpreparation;
     reparationh tph;
      QString lng;
      QString filename;
+
+QByteArray data;
+Arduino A;
 
 };
 

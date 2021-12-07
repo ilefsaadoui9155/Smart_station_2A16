@@ -27,7 +27,7 @@
      <string notr="true"/>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="tab_2">
      <attribute name="title">
@@ -432,6 +432,32 @@
        <string/>
       </property>
      </widget>
+     <widget class="QPushButton" name="pushButton_6">
+      <property name="geometry">
+       <rect>
+        <x>700</x>
+        <y>390</y>
+        <width>112</width>
+        <height>34</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>ouvrir porte</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_7">
+      <property name="geometry">
+       <rect>
+        <x>830</x>
+        <y>390</y>
+        <width>112</width>
+        <height>34</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>alarme</string>
+      </property>
+     </widget>
      <zorder>label_10</zorder>
      <zorder>groupBox</zorder>
      <zorder>groupBox_2</zorder>
@@ -443,6 +469,8 @@
      <zorder>Imprimer</zorder>
      <zorder>francais</zorder>
      <zorder>pushButton</zorder>
+     <zorder>pushButton_6</zorder>
+     <zorder>pushButton_7</zorder>
     </widget>
     <widget class="QWidget" name="tab">
      <attribute name="title">

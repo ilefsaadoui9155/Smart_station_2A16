@@ -4,15 +4,9 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
-QT       +=printsupport serialport
-QT       += core gui sql
-QT += core gui  multimedia multimediawidgets
-QT       +=multimedia
-QT += network
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+QT      += core gui sql printsupport
+    quick
 
-CONFIG += c++11
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = Atelier_Crud_Vf
@@ -32,14 +26,12 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
-    arduino.cpp \
         main.cpp \
         mainwindow.cpp \
     connexion.cpp \
     reparation.cpp
 
 HEADERS += \
-    arduino.h \
         mainwindow.h \
     connexion.h \
     reparation.h

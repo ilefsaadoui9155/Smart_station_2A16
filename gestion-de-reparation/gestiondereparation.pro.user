@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 4.11.0, 2021-12-07T10:03:22. -->
+<!-- Written by QtCreator 4.11.0, 2021-12-07T10:04:16. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -287,8 +287,9 @@
     </valuelist>
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:C:/Users/yassi/Downloads/Smart_station_2A16-gestion-de-reparation/gestion-de-reparation/Atelier_Crud_Vf.pro</value>
-    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">C:/Users/yassi/Downloads/Smart_station_2A16-gestion-de-reparation/gestion-de-reparation/Atelier_Crud_Vf.pro</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">gestiondereparation2</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:D:/ProjetCpp/gestion-de-reparation/gestiondereparation.pro</value>
+    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">D:/ProjetCpp/gestion-de-reparation/gestiondereparation.pro</value>
     <value type="QString" key="RunConfiguration.Arguments"></value>
     <value type="bool" key="RunConfiguration.Arguments.multi">false</value>
     <value type="QString" key="RunConfiguration.OverrideDebuggerStartup"></value>
