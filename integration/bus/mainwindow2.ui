@@ -1,0 +1,737 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow2</class>
+ <widget class="QMainWindow" name="MainWindow2">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1105</width>
+    <height>621</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QTabWidget" name="tabWidget">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>70</y>
+      <width>800</width>
+      <height>500</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>2</number>
+    </property>
+    <widget class="QWidget" name="tab">
+     <attribute name="title">
+      <string>Ajouter</string>
+     </attribute>
+     <widget class="QLabel" name="label_6">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>50</y>
+        <width>371</width>
+        <height>391</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>../../../Downloads/244340699_686126612356691_3962841609219595743_n.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_13">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>-10</y>
+        <width>800</width>
+        <height>500</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 127);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pb_ajouter">
+      <property name="geometry">
+       <rect>
+        <x>240</x>
+        <y>330</y>
+        <width>100</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Ajouter</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="le_matricule">
+      <property name="geometry">
+       <rect>
+        <x>191</x>
+        <y>100</y>
+        <width>200</width>
+        <height>40</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_4">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>220</y>
+        <width>131</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Palatino Linotype</family>
+        <pointsize>18</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Classe</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_7">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>100</y>
+        <width>131</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Palatino Linotype</family>
+        <pointsize>18</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Matricule</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_5">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>160</y>
+        <width>131</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Palatino Linotype</family>
+        <pointsize>18</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Image</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_29">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>280</y>
+        <width>131</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Palatino Linotype</family>
+        <pointsize>18</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Etat</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="but_img2">
+      <property name="geometry">
+       <rect>
+        <x>190</x>
+        <y>160</y>
+        <width>200</width>
+        <height>40</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Parcourir une image</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="combo_etat_2">
+      <property name="geometry">
+       <rect>
+        <x>190</x>
+        <y>280</y>
+        <width>200</width>
+        <height>40</height>
+       </rect>
+      </property>
+      <item>
+       <property name="text">
+        <string>En Marche</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>En Panne</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QComboBox" name="combo_etat_ajout">
+      <property name="geometry">
+       <rect>
+        <x>190</x>
+        <y>223</y>
+        <width>200</width>
+        <height>40</height>
+       </rect>
+      </property>
+      <item>
+       <property name="text">
+        <string>Touristique</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Express</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Commun</string>
+       </property>
+      </item>
+     </widget>
+     <zorder>label_13</zorder>
+     <zorder>label_6</zorder>
+     <zorder>pb_ajouter</zorder>
+     <zorder>le_matricule</zorder>
+     <zorder>label_4</zorder>
+     <zorder>label_7</zorder>
+     <zorder>label_5</zorder>
+     <zorder>label_29</zorder>
+     <zorder>but_img2</zorder>
+     <zorder>combo_etat_2</zorder>
+     <zorder>combo_etat_ajout</zorder>
+    </widget>
+    <widget class="QWidget" name="tab_2">
+     <attribute name="title">
+      <string>Affichage</string>
+     </attribute>
+     <widget class="QTableView" name="tab_bus">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>99</y>
+        <width>561</width>
+        <height>371</height>
+       </rect>
+      </property>
+      <property name="palette">
+       <palette>
+        <active>
+         <colorrole role="PlaceholderText">
+          <brush brushstyle="SolidPattern">
+           <color alpha="128">
+            <red>255</red>
+            <green>255</green>
+            <blue>0</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </active>
+        <inactive>
+         <colorrole role="PlaceholderText">
+          <brush brushstyle="SolidPattern">
+           <color alpha="128">
+            <red>255</red>
+            <green>255</green>
+            <blue>0</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </inactive>
+        <disabled>
+         <colorrole role="PlaceholderText">
+          <brush brushstyle="SolidPattern">
+           <color alpha="128">
+            <red>255</red>
+            <green>255</green>
+            <blue>0</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </disabled>
+       </palette>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_16">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>-10</y>
+        <width>800</width>
+        <height>500</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 127);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="Digital_clock">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>10</y>
+        <width>121</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Clock</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pb_facebook_2">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>0</y>
+        <width>51</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>../../Facebook-logo-png-2.png</normaloff>../../Facebook-logo-png-2.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>50</width>
+        <height>50</height>
+       </size>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pb_instagram_2">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>51</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>../../download.jpg</normaloff>../../download.jpg</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>40</width>
+        <height>40</height>
+       </size>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_8">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>60</y>
+        <width>91</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Palatino Linotype</family>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Matricule</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="le_matriculesupp">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>60</y>
+        <width>101</width>
+        <height>31</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pb_supprimer_3">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>60</y>
+        <width>100</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Rechercher</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pb_supprimer">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>60</y>
+        <width>100</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Supprimer</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="imgaff">
+      <property name="geometry">
+       <rect>
+        <x>570</x>
+        <y>220</y>
+        <width>201</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pb_afficher">
+      <property name="geometry">
+       <rect>
+        <x>420</x>
+        <y>60</y>
+        <width>100</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Afficher</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pb_trier">
+      <property name="geometry">
+       <rect>
+        <x>530</x>
+        <y>60</y>
+        <width>100</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Trier</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="comboOrdre">
+      <property name="geometry">
+       <rect>
+        <x>640</x>
+        <y>60</y>
+        <width>101</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <item>
+       <property name="text">
+        <string>Croissant</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Decroissant</string>
+       </property>
+      </item>
+     </widget>
+     <zorder>label_16</zorder>
+     <zorder>tab_bus</zorder>
+     <zorder>Digital_clock</zorder>
+     <zorder>pb_facebook_2</zorder>
+     <zorder>pb_instagram_2</zorder>
+     <zorder>label_8</zorder>
+     <zorder>le_matriculesupp</zorder>
+     <zorder>pb_supprimer_3</zorder>
+     <zorder>pb_supprimer</zorder>
+     <zorder>imgaff</zorder>
+     <zorder>pb_afficher</zorder>
+     <zorder>pb_trier</zorder>
+     <zorder>comboOrdre</zorder>
+    </widget>
+    <widget class="QWidget" name="tab_4">
+     <attribute name="title">
+      <string>Modifier </string>
+     </attribute>
+     <widget class="QLabel" name="label_15">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>-10</y>
+        <width>800</width>
+        <height>500</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 127);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="le_matriculemod">
+      <property name="geometry">
+       <rect>
+        <x>191</x>
+        <y>100</y>
+        <width>200</width>
+        <height>40</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_30">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>280</y>
+        <width>131</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Palatino Linotype</family>
+        <pointsize>18</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Etat</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_9">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>50</y>
+        <width>371</width>
+        <height>391</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>../../../Downloads/244340699_686126612356691_3962841609219595743_n.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_10">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>100</y>
+        <width>131</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Palatino Linotype</family>
+        <pointsize>18</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Matricule</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_11">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>220</y>
+        <width>131</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Palatino Linotype</family>
+        <pointsize>18</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Classe</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_12">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>160</y>
+        <width>131</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Palatino Linotype</family>
+        <pointsize>18</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Image</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="but_modifier">
+      <property name="geometry">
+       <rect>
+        <x>240</x>
+        <y>330</y>
+        <width>100</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Modifier</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="combo_etat">
+      <property name="geometry">
+       <rect>
+        <x>190</x>
+        <y>280</y>
+        <width>200</width>
+        <height>40</height>
+       </rect>
+      </property>
+      <item>
+       <property name="text">
+        <string>En Marche</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>En Panne</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QPushButton" name="but_img">
+      <property name="geometry">
+       <rect>
+        <x>190</x>
+        <y>160</y>
+        <width>200</width>
+        <height>40</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Parcourir une image</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="img">
+      <property name="geometry">
+       <rect>
+        <x>290</x>
+        <y>110</y>
+        <width>31</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>TextLabel</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="combo_etat_modif">
+      <property name="geometry">
+       <rect>
+        <x>190</x>
+        <y>223</y>
+        <width>200</width>
+        <height>40</height>
+       </rect>
+      </property>
+      <item>
+       <property name="text">
+        <string>Touristique</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Express</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Commun</string>
+       </property>
+      </item>
+     </widget>
+     <zorder>img</zorder>
+     <zorder>label_15</zorder>
+     <zorder>label_9</zorder>
+     <zorder>le_matriculemod</zorder>
+     <zorder>label_30</zorder>
+     <zorder>label_10</zorder>
+     <zorder>label_11</zorder>
+     <zorder>label_12</zorder>
+     <zorder>but_modifier</zorder>
+     <zorder>combo_etat</zorder>
+     <zorder>but_img</zorder>
+     <zorder>combo_etat_modif</zorder>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1105</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
